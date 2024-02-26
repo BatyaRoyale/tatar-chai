@@ -10,4 +10,8 @@ class IndexController extends Controller
         return view("pages.index");
     }
 
+    public function admin(){
+        return view("pages.admin");
+    }
+
 }

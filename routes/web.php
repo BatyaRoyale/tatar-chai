@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,13 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/register','register')->name('auth.register');
     Route::post('/login','login')->name('auth.login');
     Route::post('/logout','logout')->name('auth.logout');
+});
+
+Route::controller(CategoryController::class)->prefix('category')->middleware([\App\Http\Middleware\AdminMiddleware::class])->group(function () {
+    Route::get('/create', 'create')->name('category.create');
+    Route::post('/', 'store')->name('category.store');
+    // id
+    Route::delete('/{category}', 'destroy')->name('category.destroy');
+    Route::get('/{category}/edit', 'edit')->name('category.edit');
+    Route::patch('/{category}', 'update')->name('category.update');
 });

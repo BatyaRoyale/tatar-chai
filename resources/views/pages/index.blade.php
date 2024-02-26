@@ -10,12 +10,15 @@
                         <h1 class="text-5xl">Иң яхшы чәйләр сату</h1>
                         <p class="text-lg">татар чәйе - күпьеллык тәҗрибәсе булган яшь һәм перспективалы компания. Сыйфатны саклап базарда иң түбән бәяләр тәкъдим итәбез</p>
                     </div>
+                    <div class="flex flex-col justify-center items-center m-auto">
+                        <a href="" class="button bg-buttonImg bg-contain text-white flex flex-col items-end relative h-12">
+                            <span class="absolute left-1/2 -translate-x-1/2 bottom-[1px] text-center ">
+                                сатып алырга
+                            </span>    
+                        </a>
+                    </div>
                     
-                    <a href="" class="button bg-buttonImg bg-contain text-white flex flex-col items-end relative h-12">
-                        <span class="absolute left-1/2 -translate-x-1/2 bottom-[1px] text-center">
-                            сатып алырга
-                        </span>    
-                    </a>
+                    
                 </div>
                 <div class="w-1/2">
                     <img src="{{asset('public/assets/img/banner.png')}}" alt="Изображение" class="">
