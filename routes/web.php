@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +40,12 @@ Route::controller(CategoryController::class)->prefix('category')->middleware([\A
     Route::delete('/{category}', 'destroy')->name('category.destroy');
     Route::get('/{category}/edit', 'edit')->name('category.edit');
     Route::patch('/{category}', 'update')->name('category.update');
+});
+
+Route::controller(ProductController::class)->prefix('product')->name('product.')->group(function () {
+    Route::get('/create', 'create')->name('create');
+    Route::post('/', 'store')->name('store');
+    Route::delete('/{product}', 'destroy')->name('destroy');
+    Route::get('/{product}/edit', 'edit')->name('edit');
+    Route::patch('/{product}', 'update')->name('update');
 });

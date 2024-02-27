@@ -7,7 +7,7 @@
             <li><a href="" class="h-5 hover:border-b border-white pb-2 transition">Безнең турында</a></li>
             @auth
             @if(auth()->user()->role_id == 2)
-                <li><a class="h-5 hover:border-b border-white pb-2 transition" href="{{ route('index.admin') }}">Админ панель</a></li>
+                <li><a class="h-5 hover:border-b border-white pb-2 transition" href="{{ route('index.admin') }}">Админ панеле</a></li>
             @endif
         @endauth
         </ul>

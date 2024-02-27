@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreRequest;
-use App\Http\Requests\UpdateRequest;
+use App\Http\Requests\Category\StoreRequest;
+use App\Http\Requests\Category\UpdateRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,13 @@ class CategoryController extends Controller
 
     }
 
-    publix
+    public function store(StoreRequest $request) {
+        $data = $request->validated();
+
+        Category::query()->create($data);
+
+        return redirect()->route('index.admin');
+    }
 
     // $id
     public function destroy(Category $category) {

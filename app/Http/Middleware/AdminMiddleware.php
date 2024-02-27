@@ -15,11 +15,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        {
-            if(!auth()->user() || auth()->user()->role_id !== 2) {
-                abort(403);
+            // dd(auth()->user());
+            if(!auth()->user() || (int) auth()->user()->role_id !== 2) {
+                abort(403,"gbljhfc");
             }
             return $next($request);
-        }
     }
 }
